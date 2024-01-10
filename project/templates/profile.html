@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content%}
+    <img class="card-img-top" style="margin-top: 0; padding-top: 0;" src="https://static.codepen.io/assets/profile/profile-bg-7e5b92551f68bb55b638847ab4b3ced093fa6d3727e02083fdade22a2d4b07e2.svg" />
+    <div class="container">
+    <div class="text-center">
+        <img style="height: 120px; width: 120px; margin: -60px auto 0 auto; border-radius: 50%;" src="https://www.gravatar.com/avatar?d=mp" />
+        <h1>{{ request.user.username }}</h1>
+        <p class="lead">{{ request.user.first_name }} {{ request.user.last_name }}</p>
+    </div>
+    <ul class="list-unstyled text-muted">
+        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ profile.location }} </li>
+        <li><i class="fas fa-link" aria-hidden="true"></i> <a href="#">{{ request.user.email }} </a></li>
+        <li><i class="far fa-calendar-alt" aria-hidden="true"></i> {{ request.user.last_login }} </li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+{% endblock %}

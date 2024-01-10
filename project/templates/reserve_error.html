@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Make a Reservation</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      This table is already occupied, choose from the available
+      <label for="table" style="width: 100vw;">Table: {{ form.table }} </label>
+    </div>
+    <div class="form-group">
+      <label for="start_time" style="width: 100vw;" aria-readonly="true">Start Time: {{ form.start_time }}</label>
+      <!-- <input type="datetime-local" placeholder="{{start}}" class="form-control" id="start_time" name="start_time" readonly> -->
+    </div>
+    <div class="form-group">
+      <label for="end_time" style="width: 100vw;" aria-readonly="true">End Time: {{ form.end_time }}</label>
+      <!-- <input type="datetime-local" placeholder="{{end}}" class="form-control" id="end_time" name="end_time" readonly> -->
+    </div>
+    <button type="submit" class="btn btn-primary">Make Reservation</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+    {% if list %}
+        {% for item in list %}
+            <center>
+                <div class="ibm-fluid" style="width: 85%; padding-top: 40px; text-align: left; vertical-align: center;">
+                <div class="ibm-col-12-6 ibm-col-medium-12-10 ibm-center-block">
+                    <a class="ibm-blocklink ibm-padding-content ibm-border-gray-20" href="{% url 'detail' item.id %}">
+                    <div class="ibm-mo">
+                        <table style="width:100%" class="the_table">
+                        <col width="10%">
+                        <col width="50%">
+                        <col width="20%">
+                        <col width="20%">
+                        <tr>
+                            <td>
+                            <div class="ibm-mo__image Rtable-cell"><img src="{{ item.image.url }}" alt="" height="165" width="240"></div>
+                            <td>
+                            <h2 class="ibm-bold ibm-h2 ibm-textcolor-blue-50 Rtable-cell Rtable-cell">Restaurant: {{ item.title }}</h2>
+                            <p>Address: {{ item.address }}</p>
+                            <p>Open till: {{ item.work_time }}</p>
+                            <p>Rating: {{ item.rating }}</p>
+                            <p>Number of reviews: {{ item.number_of_reviews }}</p>
+                            </td>
+                        </tr>
+                        </table>
+                    </div>
+                    </a>
+                    <br/>
+                </div>
+            </center>
+        {% endfor %}
+    {% else %}
+        <center><h1> No such restaurants </h1></center>
+    {% endif %}
+
+{% endblock %}
